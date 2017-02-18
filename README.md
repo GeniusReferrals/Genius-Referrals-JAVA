@@ -169,20 +169,20 @@ The singleton instance of the ``` AuthenticationsController ``` class can be acc
 AuthenticationsController authentications = client.getAuthentications();
 ```
 
-#### <a name="get_authentications_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AuthenticationsController.getAuthenticationsAsync") getAuthenticationsAsync
+#### <a name="get_authentication_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AuthenticationsController.getAuthenticationAsync") getAuthenticationAsync
 
 > Allow clients to test authentication on Genius Referrals platform.
 
 
 ```java
-void getAuthenticationsAsync(final APICallBack<DynamicResponse> callBack)
+void getAuthenticationAsync(final APICallBack<DynamicResponse> callBack)
 ```
 
 #### Example Usage
 
 ```java
 // Invoking the API call with sample inputs
-authentications.getAuthenticationsAsync(new APICallBack<DynamicResponse>() {
+authentications.getAuthenticationAsync(new APICallBack<DynamicResponse>() {
     public void onSuccess(HttpContext context, DynamicResponse response) {
         // TODO success callback handler
     }
@@ -496,6 +496,348 @@ try {
 ```
 
 
+#### <a name="get_share_links_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getShareLinksAsync") getShareLinksAsync
+
+> Get the advocates share links. These are the links that advocates use to share your services online.  Share links are wrapped per campaign and widget package.
+
+
+```java
+void getShareLinksAsync(
+        final String accountSlug,
+        final String advocateToken,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSlug |  ``` Required ```  | The account identifier |
+| advocateToken |  ``` Required ```  | The advocate's token |
+
+
+#### Example Usage
+
+```java
+String accountSlug = "account_slug";
+String advocateToken = "advocate_token";
+// Invoking the API call with sample inputs
+advocates.getShareLinksAsync(accountSlug, advocateToken, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="put_payment_method_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.putPaymentMethodAsync") putPaymentMethodAsync
+
+> Update a payment method.
+
+
+```java
+void putPaymentMethodAsync(
+        final String accountSlug,
+        final String advocateToken,
+        final int advocatePaymentMethodId,
+        final PaymentMethodForm advocatePaymentMethodForm,
+        final APICallBack<Object> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSlug |  ``` Required ```  | The advocate's token |
+| advocateToken |  ``` Required ```  | The advocate's token |
+| advocatePaymentMethodId |  ``` Required ```  | The payment method's identifier |
+| advocatePaymentMethodForm |  ``` Required ```  | The body of the request |
+
+
+#### Example Usage
+
+```java
+try {
+    String accountSlug = "account_slug";
+    String advocateToken = "advocate_token";
+    int advocatePaymentMethodId = 49;
+    PaymentMethodForm advocatePaymentMethodForm = new PaymentMethodForm();
+    // Invoking the API call with sample inputs
+    advocates.putPaymentMethodAsync(accountSlug, advocateToken, advocatePaymentMethodId, advocatePaymentMethodForm, new APICallBack<void>() {
+        public void onSuccess(HttpContext context, void response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+#### <a name="get_payment_method_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getPaymentMethodAsync") getPaymentMethodAsync
+
+> Get an advocate's payment method
+
+
+```java
+void getPaymentMethodAsync(
+        final String accountSlug,
+        final String advocateToken,
+        final int advocatePaymentMethodId,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSlug |  ``` Required ```  | The account identifier |
+| advocateToken |  ``` Required ```  | The advocate's token |
+| advocatePaymentMethodId |  ``` Required ```  | The payment method's identifier |
+
+
+#### Example Usage
+
+```java
+String accountSlug = "account_slug";
+String advocateToken = "advocate_token";
+int advocatePaymentMethodId = 49;
+// Invoking the API call with sample inputs
+advocates.getPaymentMethodAsync(accountSlug, advocateToken, advocatePaymentMethodId, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="post_payment_method_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.postPaymentMethodAsync") postPaymentMethodAsync
+
+> Create a new payment method.
+
+
+```java
+void postPaymentMethodAsync(
+        final String accountSlug,
+        final String advocateToken,
+        final PaymentMethodForm advocatePaymentMethodForm,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSlug |  ``` Required ```  | The account identifier |
+| advocateToken |  ``` Required ```  | The advocate's token |
+| advocatePaymentMethodForm |  ``` Required ```  | The body of the request |
+
+
+#### Example Usage
+
+```java
+try {
+    String accountSlug = "account_slug";
+    String advocateToken = "advocate_token";
+    PaymentMethodForm advocatePaymentMethodForm = new PaymentMethodForm();
+    // Invoking the API call with sample inputs
+    advocates.postPaymentMethodAsync(accountSlug, advocateToken, advocatePaymentMethodForm, new APICallBack<DynamicResponse>() {
+        public void onSuccess(HttpContext context, DynamicResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+#### <a name="get_bonus_redemption_method_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getBonusRedemptionMethodAsync") getBonusRedemptionMethodAsync
+
+> Get bonuses redemption method.
+
+
+```java
+void getBonusRedemptionMethodAsync(
+        final String bonusesRedemptionMethodSlug,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bonusesRedemptionMethodSlug |  ``` Required ```  | The bonus redemption method's identifier |
+
+
+#### Example Usage
+
+```java
+String bonusesRedemptionMethodSlug = "bonuses_redemption_method_slug";
+// Invoking the API call with sample inputs
+advocates.getBonusRedemptionMethodAsync(bonusesRedemptionMethodSlug, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="get_bonus_redemption_methods_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getBonusRedemptionMethodsAsync") getBonusRedemptionMethodsAsync
+
+> Get bonuses redemption methods.
+
+
+```java
+void getBonusRedemptionMethodsAsync(final APICallBack<DynamicResponse> callBack)
+```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+advocates.getBonusRedemptionMethodsAsync(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="get_currencies_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getCurrenciesAsync") getCurrenciesAsync
+
+> Get currencies.
+
+
+```java
+void getCurrenciesAsync(final APICallBack<DynamicResponse> callBack)
+```
+
+#### Example Usage
+
+```java
+// Invoking the API call with sample inputs
+advocates.getCurrenciesAsync(new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="get_currency_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getCurrencyAsync") getCurrencyAsync
+
+> Get a currency.
+
+
+```java
+void getCurrencyAsync(
+        final String code,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| code |  ``` Required ```  | The currency's code |
+
+
+#### Example Usage
+
+```java
+String code = "code";
+// Invoking the API call with sample inputs
+advocates.getCurrencyAsync(code, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
+#### <a name="get_payment_methods_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.AdvocatesController.getPaymentMethodsAsync") getPaymentMethodsAsync
+
+> Get the advocate's payment methods.
+
+
+```java
+void getPaymentMethodsAsync(
+        final String accountSlug,
+        final String advocateToken,
+        final Integer page,
+        final Integer limit,
+        final String filter,
+        final String sort,
+        final APICallBack<DynamicResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accountSlug |  ``` Required ```  | The account identifier |
+| advocateToken |  ``` Required ```  | The advocate's token |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| filter |  ``` Optional ```  | Allowed fields: username, is_active. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
+| sort |  ``` Optional ```  | Allowed fields: username, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort=last_name\|first_name\|-hire_date |
+
+
+#### Example Usage
+
+```java
+String accountSlug = "account_slug";
+String advocateToken = "advocate_token";
+Integer page = 1;
+Integer limit = 10;
+String filter = "filter";
+String sort = "sort";
+// Invoking the API call with sample inputs
+advocates.getPaymentMethodsAsync(accountSlug, advocateToken, page, limit, filter, sort, new APICallBack<DynamicResponse>() {
+    public void onSuccess(HttpContext context, DynamicResponse response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ### <a name="accounts_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.geniusreferrals.api.controllers.AccountsController") AccountsController
@@ -561,8 +903,8 @@ void getAccountsAsync(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort=last_name\|first_name\|-hire_date |
 
@@ -570,8 +912,8 @@ void getAccountsAsync(
 #### Example Usage
 
 ```java
-Integer page = 160;
-Integer limit = 160;
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs
@@ -690,7 +1032,7 @@ void getTopAdvocatesAsync(
 |-----------|------|-------------|
 | accountSlug |  ``` Optional ```  | The account identifier |
 | campaignSlug |  ``` Optional ```  | The campaign identifier |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10) |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10) |
 | from |  ``` Optional ```  | The datetime were the range of the search starts |
 | to |  ``` Optional ```  | The datetime were the range of the search stops |
 
@@ -700,7 +1042,7 @@ void getTopAdvocatesAsync(
 ```java
 String accountSlug = "account_slug";
 String campaignSlug = "campaign_slug";
-Integer limit = 160;
+Integer limit = 10;
 Date from = new Date();
 Date to = new Date();
 // Invoking the API call with sample inputs
@@ -1058,13 +1400,13 @@ referrals.deleteReferralAsync(accountSlug, advocateToken, referralId, new APICal
 ```
 
 
-#### <a name="post_referrals_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.ReferralsController.postReferralsAsync") postReferralsAsync
+#### <a name="post_referral_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.ReferralsController.postReferralAsync") postReferralAsync
 
 > Create a new referral.
 
 
 ```java
-void postReferralsAsync(
+void postReferralAsync(
         final String accountSlug,
         final String advocateToken,
         final ReferralForm referralForm,
@@ -1088,7 +1430,7 @@ try {
     String advocateToken = "advocate_token";
     ReferralForm referralForm = new ReferralForm();
     // Invoking the API call with sample inputs
-    referrals.postReferralsAsync(accountSlug, advocateToken, referralForm, new APICallBack<DynamicResponse>() {
+    referrals.postReferralAsync(accountSlug, advocateToken, referralForm, new APICallBack<DynamicResponse>() {
         public void onSuccess(HttpContext context, DynamicResponse response) {
             // TODO success callback handler
         }
@@ -1173,8 +1515,8 @@ void getReferralsAsync(
 |-----------|------|-------------|
 | accountSlug |  ``` Required ```  | The account identifier |
 | advocateToken |  ``` Required ```  | The advocate's token |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: url, referral_origin_slug, created. Use the following delimiters to build your filters params. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1184,8 +1526,8 @@ void getReferralsAsync(
 ```java
 String accountSlug = "account_slug";
 String advocateToken = "advocate_token";
-Integer page = 160;
-Integer limit = 160;
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs
@@ -1357,7 +1699,7 @@ void patchRedemptionRequestAsync(
 
 ```java
 String accountSlug = "account_slug";
-int redemptionRequestId = 160;
+int redemptionRequestId = 49;
 // Invoking the API call with sample inputs
 redemptionRequests.patchRedemptionRequestAsync(accountSlug, redemptionRequestId, new APICallBack<void>() {
     public void onSuccess(HttpContext context, void response) {
@@ -1459,8 +1801,8 @@ redemptionRequests.getRedemptionRequestAsync(accountSlug, redemptionRequestId, n
 ```java
 void getRedemptionRequestsAsync(
         final String accountSlug,
-        final String page,
-        final String limit,
+        final Integer page,
+        final Integer limit,
         final String filter,
         final String sort,
         final APICallBack<DynamicResponse> callBack)
@@ -1471,8 +1813,8 @@ void getRedemptionRequestsAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | accountSlug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: redemption_request_id, name, lastname, email, request_status_slug, request_action_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, lastname, email, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1481,8 +1823,8 @@ void getRedemptionRequestsAsync(
 
 ```java
 String accountSlug = "account_slug";
-String page = "page";
-String limit = "limit";
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs
@@ -1530,8 +1872,8 @@ void getBonusesAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | accountSlug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name, lastname, email, campaign_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: name, lastname, email, created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1540,8 +1882,8 @@ void getBonusesAsync(
 
 ```java
 String accountSlug = "account_slug";
-Integer page = 160;
-Integer limit = 160;
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs
@@ -1557,13 +1899,13 @@ bonuses.getBonusesAsync(accountSlug, page, limit, filter, sort, new APICallBack<
 ```
 
 
-#### <a name="post_bonuses_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.postBonusesAsync") postBonusesAsync
+#### <a name="post_bonus_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.postBonusAsync") postBonusAsync
 
 > Make an attempt to give a bonus for to the advocate's referrer. The system processes the given advocate (referral) and creates a bonus for the advocate's referrer if is needed. All restrictions set on the campaigns for this account will be check out before giving the bonus to the advocate's referrer.
 
 
 ```java
-void postBonusesAsync(
+void postBonusAsync(
         final String accountSlug,
         final BonusesForm bonusesForm,
         final APICallBack<DynamicResponse> callBack)
@@ -1584,7 +1926,7 @@ try {
     String accountSlug = "account_slug";
     BonusesForm bonusesForm = new BonusesForm();
     // Invoking the API call with sample inputs
-    bonuses.postBonusesAsync(accountSlug, bonusesForm, new APICallBack<DynamicResponse>() {
+    bonuses.postBonusAsync(accountSlug, bonusesForm, new APICallBack<DynamicResponse>() {
         public void onSuccess(HttpContext context, DynamicResponse response) {
             // TODO success callback handler
         }
@@ -1599,13 +1941,13 @@ try {
 ```
 
 
-#### <a name="get_bonuses_checkup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusesCheckupAsync") getBonusesCheckupAsync
+#### <a name="get_bonus_checkup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusCheckupAsync") getBonusCheckupAsync
 
 > Check if there is a bonus to be given to the advocate. Allows the clients to check if there is a bonus to be given, it simulates the behaivor of a POST request to /accounts/{account_slug}/bonuses resource. This resource is idempotent.
 
 
 ```java
-void getBonusesCheckupAsync(
+void getBonusCheckupAsync(
         final String accountSlug,
         final String advocateToken,
         final String reference,
@@ -1629,9 +1971,9 @@ void getBonusesCheckupAsync(
 String accountSlug = "account_slug";
 String advocateToken = "advocate_token";
 String reference = "reference";
-double paymentAmount = 160.010402454068;
+double paymentAmount = 49.1830164190303;
 // Invoking the API call with sample inputs
-bonuses.getBonusesCheckupAsync(accountSlug, advocateToken, reference, paymentAmount, new APICallBack<InputStream>() {
+bonuses.getBonusCheckupAsync(accountSlug, advocateToken, reference, paymentAmount, new APICallBack<InputStream>() {
     public void onSuccess(HttpContext context, InputStream response) {
         // TODO success callback handler
     }
@@ -1643,15 +1985,15 @@ bonuses.getBonusesCheckupAsync(accountSlug, advocateToken, reference, paymentAmo
 ```
 
 
-#### <a name="post_bonuses_force_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.postBonusesForceAsync") postBonusesForceAsync
+#### <a name="post_force_bonus_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.postForceBonusAsync") postForceBonusAsync
 
 > Force the system to give a bonus to an advocate. The system will not take into account the restriccions specified on the campaigns.
 
 
 ```java
-void postBonusesForceAsync(
+void postForceBonusAsync(
         final String accountSlug,
-        final BonusesForm1 bonusForm,
+        final ForceBonusesForm bonusForm,
         final APICallBack<DynamicResponse> callBack)
 ```
 
@@ -1668,9 +2010,9 @@ void postBonusesForceAsync(
 ```java
 try {
     String accountSlug = "account_slug";
-    BonusesForm1 bonusForm = new BonusesForm1();
+    ForceBonusesForm bonusForm = new ForceBonusesForm();
     // Invoking the API call with sample inputs
-    bonuses.postBonusesForceAsync(accountSlug, bonusForm, new APICallBack<DynamicResponse>() {
+    bonuses.postForceBonusAsync(accountSlug, bonusForm, new APICallBack<DynamicResponse>() {
         public void onSuccess(HttpContext context, DynamicResponse response) {
             // TODO success callback handler
         }
@@ -1685,13 +2027,13 @@ try {
 ```
 
 
-#### <a name="get_bonuses_trace_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusesTraceAsync") getBonusesTraceAsync
+#### <a name="get_bonus_trace_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusTraceAsync") getBonusTraceAsync
 
 > Get a bonus request trace.
 
 
 ```java
-void getBonusesTraceAsync(
+void getBonusTraceAsync(
         final String accountSlug,
         final int traceId,
         final APICallBack<DynamicResponse> callBack)
@@ -1709,9 +2051,9 @@ void getBonusesTraceAsync(
 
 ```java
 String accountSlug = "account_slug";
-int traceId = 160;
+int traceId = 49;
 // Invoking the API call with sample inputs
-bonuses.getBonusesTraceAsync(accountSlug, traceId, new APICallBack<DynamicResponse>() {
+bonuses.getBonusTraceAsync(accountSlug, traceId, new APICallBack<DynamicResponse>() {
     public void onSuccess(HttpContext context, DynamicResponse response) {
         // TODO success callback handler
     }
@@ -1747,7 +2089,7 @@ void deleteBonusAsync(
 
 ```java
 String accountSlug = "account_slug";
-int bonusId = 160;
+int bonusId = 49;
 // Invoking the API call with sample inputs
 bonuses.deleteBonusAsync(accountSlug, bonusId, new APICallBack<void>() {
     public void onSuccess(HttpContext context, void response) {
@@ -1785,7 +2127,7 @@ void getBonusAsync(
 
 ```java
 String accountSlug = "account_slug";
-int bonusId = 160;
+int bonusId = 49;
 // Invoking the API call with sample inputs
 bonuses.getBonusAsync(accountSlug, bonusId, new APICallBack<DynamicResponse>() {
     public void onSuccess(HttpContext context, DynamicResponse response) {
@@ -1799,13 +2141,13 @@ bonuses.getBonusAsync(accountSlug, bonusId, new APICallBack<DynamicResponse>() {
 ```
 
 
-#### <a name="get_bonuses_traces_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusesTracesAsync") getBonusesTracesAsync
+#### <a name="get_bonus_traces_async"></a>![Method: ](https://apidocs.io/img/method.png "com.geniusreferrals.api.controllers.BonusesController.getBonusTracesAsync") getBonusTracesAsync
 
 > Get the list of bonuses traces (audit trail). Every time the system tries to give a bonus the an advocate a new trace is created.
 
 
 ```java
-void getBonusesTracesAsync(
+void getBonusTracesAsync(
         final String accountSlug,
         final Integer page,
         final Integer limit,
@@ -1819,8 +2161,8 @@ void getBonusesTracesAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | accountSlug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: reference, result, bonus_amount, advocate_token, advocate_referrer_token, campaign_slug, from, to, created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1829,12 +2171,12 @@ void getBonusesTracesAsync(
 
 ```java
 String accountSlug = "account_slug";
-Integer page = 160;
-Integer limit = 160;
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs
-bonuses.getBonusesTracesAsync(accountSlug, page, limit, filter, sort, new APICallBack<DynamicResponse>() {
+bonuses.getBonusTracesAsync(accountSlug, page, limit, filter, sort, new APICallBack<DynamicResponse>() {
     public void onSuccess(HttpContext context, DynamicResponse response) {
         // TODO success callback handler
     }
@@ -1916,8 +2258,8 @@ void getCampaignsAsync(
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | accountSlug |  ``` Required ```  | The account identifier |
-| page |  ``` Optional ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
-| limit |  ``` Optional ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
+| page |  ``` Optional ```  ``` DefaultValue ```  | Page number, e.g. 1 would start at the first result, and 10 would start at the tenth result. |
+| limit |  ``` Optional ```  ``` DefaultValue ```  | Maximum number of results to return in the response. Default (10), threshold (100) |
 | filter |  ``` Optional ```  | Allowed fields: name, description, start_date, end_date, is_active (true\|false), created. Use the following delimiters to build your filters params. The vertical bar ('\|') to separate individual filter phrases and a double colon ('::') to separate the names and values. The delimiter of the double colon (':') separates the property name from the comparison value, enabling the comparison value to contain spaces. Example: www.example.com/users?filter='name::todd\|city::denver\|title::grand poobah' |
 | sort |  ``` Optional ```  | Allowed fields: campaign_slug, created, start_date, end_date, is_active. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date' |
 
@@ -1926,8 +2268,8 @@ void getCampaignsAsync(
 
 ```java
 String accountSlug = "account_slug";
-Integer page = 160;
-Integer limit = 160;
+Integer page = 1;
+Integer limit = 10;
 String filter = "filter";
 String sort = "sort";
 // Invoking the API call with sample inputs

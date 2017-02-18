@@ -69,7 +69,7 @@ public class RootsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4785149219217349138L;
+            private static final long serialVersionUID = 4964424409921051017L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

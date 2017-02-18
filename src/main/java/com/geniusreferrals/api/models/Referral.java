@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class Referral 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4637646359128944322L;
+    private static final long serialVersionUID = 4705517041778190258L;
     private String referredAdvocateToken;
     private String referralOriginSlug;
     private String campaignSlug;

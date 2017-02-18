@@ -72,7 +72,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5231240343475499219L;
+            private static final long serialVersionUID = 5568473662047038557L;
             {
                     put( "referral_origin_slug", referralOriginSlug );
             }});
@@ -81,7 +81,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5381510484956043693L;
+            private static final long serialVersionUID = 5208801817276142431L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -177,7 +177,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5433350142115954900L;
+            private static final long serialVersionUID = 5684911508155846110L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -283,7 +283,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5293549504272688121L;
+            private static final long serialVersionUID = 5033662197078959749L;
             {
                     put( "account_slug", accountSlug );
                     put( "advocate_token", advocateToken );
@@ -294,7 +294,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5350273826570868489L;
+            private static final long serialVersionUID = 5495331086156014543L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -400,7 +400,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5549259952849967109L;
+            private static final long serialVersionUID = 5697357949368771191L;
             {
                     put( "account_slug", accountSlug );
                     put( "advocate_token", advocateToken );
@@ -411,7 +411,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4906891643535887436L;
+            private static final long serialVersionUID = 4900281274893756403L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "X-Auth-Token", Configuration.xAuthToken );
@@ -480,13 +480,13 @@ public class ReferralsController extends BaseController {
      * @param    referralForm    Required parameter: The body of the request
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse postReferrals(
+    public DynamicResponse postReferral(
                 final String accountSlug,
                 final String advocateToken,
                 final ReferralForm referralForm
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        postReferralsAsync(accountSlug, advocateToken, referralForm, callback);
+        postReferralAsync(accountSlug, advocateToken, referralForm, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -499,7 +499,7 @@ public class ReferralsController extends BaseController {
      * @param    referralForm    Required parameter: The body of the request
      * @return    Returns the void response from the API call 
      */
-    public void postReferralsAsync(
+    public void postReferralAsync(
                 final String accountSlug,
                 final String advocateToken,
                 final ReferralForm referralForm,
@@ -514,7 +514,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5549274730225567889L;
+            private static final long serialVersionUID = 5150990056961883757L;
             {
                     put( "account_slug", accountSlug );
                     put( "advocate_token", advocateToken );
@@ -524,7 +524,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5160649944960363385L;
+            private static final long serialVersionUID = 4938281286039431408L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -634,7 +634,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5039673909301094396L;
+            private static final long serialVersionUID = 5460279897670564015L;
             {
                     put( "account_slug", accountSlug );
                     put( "advocate_token", advocateToken );
@@ -645,7 +645,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5404529155976199105L;
+            private static final long serialVersionUID = 4890679604717146324L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "X-Auth-Token", Configuration.xAuthToken );
@@ -760,7 +760,7 @@ public class ReferralsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5708112559534625856L;
+            private static final long serialVersionUID = 5075300599986947836L;
             {
                     put( "account_slug", accountSlug );
                     put( "advocate_token", advocateToken );
@@ -768,10 +768,10 @@ public class ReferralsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5668165447430353950L;
+            private static final long serialVersionUID = 4650971847685774984L;
             {
-                    put( "page", page );
-                    put( "limit", limit );
+                    put( "page", (null != page) ? page : 1 );
+                    put( "limit", (null != limit) ? limit : 10 );
                     put( "filter", filter );
                     put( "sort", sort );
             }});
@@ -780,7 +780,7 @@ public class ReferralsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4860435777082237905L;
+            private static final long serialVersionUID = 5574323824101873618L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

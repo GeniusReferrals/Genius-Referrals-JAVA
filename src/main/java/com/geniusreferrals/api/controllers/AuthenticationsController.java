@@ -42,10 +42,10 @@ public class AuthenticationsController extends BaseController {
      * Allow clients to test authentication on Genius Referrals platform.
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse getAuthentications(
+    public DynamicResponse getAuthentication(
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        getAuthenticationsAsync(callback);
+        getAuthenticationAsync(callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -55,7 +55,7 @@ public class AuthenticationsController extends BaseController {
      * Allow clients to test authentication on Genius Referrals platform.
      * @return    Returns the void response from the API call 
      */
-    public void getAuthenticationsAsync(
+    public void getAuthenticationAsync(
                 final APICallBack<DynamicResponse> callBack
     ) {
         //the base uri for api requests
@@ -69,7 +69,7 @@ public class AuthenticationsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4886542833613918975L;
+            private static final long serialVersionUID = 5299764014486047125L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

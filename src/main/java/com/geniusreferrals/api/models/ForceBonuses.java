@@ -9,9 +9,9 @@ import java.util.*;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class Bonuses1 
+public class ForceBonuses 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5083463822840076333L;
+    private static final long serialVersionUID = 4966670932142670826L;
     private String advocateToken;
     private String reference;
     private int bonusAmount;

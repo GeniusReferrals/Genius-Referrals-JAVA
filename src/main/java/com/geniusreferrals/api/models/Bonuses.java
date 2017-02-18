@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class Bonuses 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4643722437251506649L;
+    private static final long serialVersionUID = 5535551959060338263L;
     private String advocateToken;
     private String reference;
     private Double paymentAmount;
