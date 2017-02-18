@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class BonusesForm 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5037072462074371444L;
+    private static final long serialVersionUID = 5383146651662454627L;
     private Bonuses bonus;
     /** GETTER
      * The bonuses' wrapper

@@ -72,7 +72,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5654554881139686375L;
+            private static final long serialVersionUID = 5243884051296987229L;
             {
                     put( "redemption_request_status_slug", redemptionRequestStatusSlug );
             }});
@@ -81,7 +81,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4699028330825216190L;
+            private static final long serialVersionUID = 5342659342004601415L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -177,7 +177,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5191613403959497912L;
+            private static final long serialVersionUID = 5419801619478039209L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -275,7 +275,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5586703102509574380L;
+            private static final long serialVersionUID = 4744059810188473272L;
             {
                     put( "redemption_request_action_slug", redemptionRequestActionSlug );
             }});
@@ -284,7 +284,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4783017413096996122L;
+            private static final long serialVersionUID = 5005830438097768734L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -380,7 +380,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4736153846302146640L;
+            private static final long serialVersionUID = 4675593170208859276L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -482,7 +482,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5430362753264699435L;
+            private static final long serialVersionUID = 5715982690367175277L;
             {
                     put( "account_slug", accountSlug );
                     put( "redemption_request_id", redemptionRequestId );
@@ -492,7 +492,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4894832432888934702L;
+            private static final long serialVersionUID = 4953094274714302399L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "X-Auth-Token", Configuration.xAuthToken );
@@ -591,7 +591,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5292965756225393795L;
+            private static final long serialVersionUID = 5745364945724767376L;
             {
                     put( "account_slug", accountSlug );
             }});
@@ -600,7 +600,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4914258358263217512L;
+            private static final long serialVersionUID = 4941186619375586327L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -702,7 +702,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5656021441302357008L;
+            private static final long serialVersionUID = 5059591444412653971L;
             {
                     put( "account_slug", accountSlug );
                     put( "redemption_request_id", redemptionRequestId );
@@ -712,7 +712,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5234486147574654233L;
+            private static final long serialVersionUID = 4689831059574396576L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -788,8 +788,8 @@ public class RedemptionRequestsController extends BaseController {
      */
     public DynamicResponse getRedemptionRequests(
                 final String accountSlug,
-                final String page,
-                final String limit,
+                final Integer page,
+                final Integer limit,
                 final String filter,
                 final String sort
     ) throws Throwable {
@@ -811,8 +811,8 @@ public class RedemptionRequestsController extends BaseController {
      */
     public void getRedemptionRequestsAsync(
                 final String accountSlug,
-                final String page,
-                final String limit,
+                final Integer page,
+                final Integer limit,
                 final String filter,
                 final String sort,
                 final APICallBack<DynamicResponse> callBack
@@ -826,17 +826,17 @@ public class RedemptionRequestsController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4992938758078825445L;
+            private static final long serialVersionUID = 5543939628851844594L;
             {
                     put( "account_slug", accountSlug );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5354299530820344695L;
+            private static final long serialVersionUID = 5108883650534073465L;
             {
-                    put( "page", page );
-                    put( "limit", limit );
+                    put( "page", (null != page) ? page : 1 );
+                    put( "limit", (null != limit) ? limit : 10 );
                     put( "filter", filter );
                     put( "sort", sort );
             }});
@@ -845,7 +845,7 @@ public class RedemptionRequestsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4946977744947533578L;
+            private static final long serialVersionUID = 5535570477022195247L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

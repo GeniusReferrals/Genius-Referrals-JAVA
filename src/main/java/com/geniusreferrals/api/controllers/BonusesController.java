@@ -88,17 +88,17 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4683453152182888446L;
+            private static final long serialVersionUID = 5441836706254705467L;
             {
                     put( "account_slug", accountSlug );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5707481567053301938L;
+            private static final long serialVersionUID = 5079325740311713518L;
             {
-                    put( "page", page );
-                    put( "limit", limit );
+                    put( "page", (null != page) ? page : 1 );
+                    put( "limit", (null != limit) ? limit : 10 );
                     put( "filter", filter );
                     put( "sort", sort );
             }});
@@ -107,7 +107,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4943623602241959740L;
+            private static final long serialVersionUID = 4682424468737904836L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -178,12 +178,12 @@ public class BonusesController extends BaseController {
      * @param    bonusesForm    Required parameter: The body of the request
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse postBonuses(
+    public DynamicResponse postBonus(
                 final String accountSlug,
                 final BonusesForm bonusesForm
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        postBonusesAsync(accountSlug, bonusesForm, callback);
+        postBonusAsync(accountSlug, bonusesForm, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -195,7 +195,7 @@ public class BonusesController extends BaseController {
      * @param    bonusesForm    Required parameter: The body of the request
      * @return    Returns the void response from the API call 
      */
-    public void postBonusesAsync(
+    public void postBonusAsync(
                 final String accountSlug,
                 final BonusesForm bonusesForm,
                 final APICallBack<DynamicResponse> callBack
@@ -209,7 +209,7 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5293602692505184434L;
+            private static final long serialVersionUID = 4621582714153436179L;
             {
                     put( "account_slug", accountSlug );
             }});
@@ -218,7 +218,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5135122768373363091L;
+            private static final long serialVersionUID = 5493923706227165610L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -291,14 +291,14 @@ public class BonusesController extends BaseController {
      * @param    paymentAmount    Required parameter: The payment amount the referrals has made. Required for a percentage based campaign.
      * @return    Returns the InputStream response from the API call 
      */
-    public InputStream getBonusesCheckup(
+    public InputStream getBonusCheckup(
                 final String accountSlug,
                 final String advocateToken,
                 final String reference,
                 final double paymentAmount
     ) throws Throwable {
         APICallBackCatcher<InputStream> callback = new APICallBackCatcher<InputStream>();
-        getBonusesCheckupAsync(accountSlug, advocateToken, reference, paymentAmount, callback);
+        getBonusCheckupAsync(accountSlug, advocateToken, reference, paymentAmount, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -312,7 +312,7 @@ public class BonusesController extends BaseController {
      * @param    paymentAmount    Required parameter: The payment amount the referrals has made. Required for a percentage based campaign.
      * @return    Returns the void response from the API call 
      */
-    public void getBonusesCheckupAsync(
+    public void getBonusCheckupAsync(
                 final String accountSlug,
                 final String advocateToken,
                 final String reference,
@@ -328,14 +328,14 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5637989341326848149L;
+            private static final long serialVersionUID = 4836735826482903835L;
             {
                     put( "account_slug", accountSlug );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5435324090254044915L;
+            private static final long serialVersionUID = 4672617160314415373L;
             {
                     put( "advocate_token", advocateToken );
                     put( "reference", reference );
@@ -346,7 +346,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4628823159202147512L;
+            private static final long serialVersionUID = 5666849076576774129L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "X-Auth-Token", Configuration.xAuthToken );
@@ -416,12 +416,12 @@ public class BonusesController extends BaseController {
      * @param    bonusForm    Required parameter: The body of the request
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse postBonusesForce(
+    public DynamicResponse postForceBonus(
                 final String accountSlug,
-                final BonusesForm1 bonusForm
+                final ForceBonusesForm bonusForm
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        postBonusesForceAsync(accountSlug, bonusForm, callback);
+        postForceBonusAsync(accountSlug, bonusForm, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -433,9 +433,9 @@ public class BonusesController extends BaseController {
      * @param    bonusForm    Required parameter: The body of the request
      * @return    Returns the void response from the API call 
      */
-    public void postBonusesForceAsync(
+    public void postForceBonusAsync(
                 final String accountSlug,
-                final BonusesForm1 bonusForm,
+                final ForceBonusesForm bonusForm,
                 final APICallBack<DynamicResponse> callBack
     ) throws JsonProcessingException {
         //the base uri for api requests
@@ -447,7 +447,7 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5127076518977515322L;
+            private static final long serialVersionUID = 4797840481946985062L;
             {
                     put( "account_slug", accountSlug );
             }});
@@ -456,7 +456,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4811759354013862641L;
+            private static final long serialVersionUID = 5355935210069531903L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -527,12 +527,12 @@ public class BonusesController extends BaseController {
      * @param    traceId    Required parameter: The trace id
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse getBonusesTrace(
+    public DynamicResponse getBonusTrace(
                 final String accountSlug,
                 final int traceId
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        getBonusesTraceAsync(accountSlug, traceId, callback);
+        getBonusTraceAsync(accountSlug, traceId, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -544,7 +544,7 @@ public class BonusesController extends BaseController {
      * @param    traceId    Required parameter: The trace id
      * @return    Returns the void response from the API call 
      */
-    public void getBonusesTraceAsync(
+    public void getBonusTraceAsync(
                 final String accountSlug,
                 final int traceId,
                 final APICallBack<DynamicResponse> callBack
@@ -558,7 +558,7 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5257417395205559957L;
+            private static final long serialVersionUID = 5385617216860785655L;
             {
                     put( "account_slug", accountSlug );
                     put( "trace_id", traceId );
@@ -568,7 +568,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5026471870599884380L;
+            private static final long serialVersionUID = 4956291292298758353L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -670,7 +670,7 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5183702959607090533L;
+            private static final long serialVersionUID = 5453360250735801188L;
             {
                     put( "account_slug", accountSlug );
                     put( "bonus_id", bonusId );
@@ -680,7 +680,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5669229499650357658L;
+            private static final long serialVersionUID = 4965026202133902393L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "X-Auth-Token", Configuration.xAuthToken );
@@ -779,7 +779,7 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5663919424368595483L;
+            private static final long serialVersionUID = 4969935022151407439L;
             {
                     put( "account_slug", accountSlug );
                     put( "bonus_id", bonusId );
@@ -789,7 +789,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5146433560251846626L;
+            private static final long serialVersionUID = 5381976192113280732L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -863,7 +863,7 @@ public class BonusesController extends BaseController {
      * @param    sort    Optional parameter: Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date'
      * @return    Returns the DynamicResponse response from the API call 
      */
-    public DynamicResponse getBonusesTraces(
+    public DynamicResponse getBonusTraces(
                 final String accountSlug,
                 final Integer page,
                 final Integer limit,
@@ -871,7 +871,7 @@ public class BonusesController extends BaseController {
                 final String sort
     ) throws Throwable {
         APICallBackCatcher<DynamicResponse> callback = new APICallBackCatcher<DynamicResponse>();
-        getBonusesTracesAsync(accountSlug, page, limit, filter, sort, callback);
+        getBonusTracesAsync(accountSlug, page, limit, filter, sort, callback);
         if(!callback.isSuccess())
             throw callback.getError();
         return callback.getResult();
@@ -886,7 +886,7 @@ public class BonusesController extends BaseController {
      * @param    sort    Optional parameter: Allowed fields: created. Use sort query-string parameter that contains a delimited set of property names. For each property name, sort in ascending order, and for each property prefixed with a dash ('-') sort in descending order. Separate each property name with a vertical bar ('\|'), which is consistent with the separation of the name\|value pairs in filtering, above. For example, if we want to retrieve users in order of their last name (ascending), first name (ascending) and hire date (descending), the request might look like this www.example.com/users?sort='last_name\|first_name\|-hire_date'
      * @return    Returns the void response from the API call 
      */
-    public void getBonusesTracesAsync(
+    public void getBonusTracesAsync(
                 final String accountSlug,
                 final Integer page,
                 final Integer limit,
@@ -903,17 +903,17 @@ public class BonusesController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4735230322935010100L;
+            private static final long serialVersionUID = 5107340318514101988L;
             {
                     put( "account_slug", accountSlug );
             }});
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5667864945568893188L;
+            private static final long serialVersionUID = 4914987795743444989L;
             {
-                    put( "page", page );
-                    put( "limit", limit );
+                    put( "page", (null != page) ? page : 1 );
+                    put( "limit", (null != limit) ? limit : 10 );
                     put( "filter", filter );
                     put( "sort", sort );
             }});
@@ -922,7 +922,7 @@ public class BonusesController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5089273388224960601L;
+            private static final long serialVersionUID = 5068094508746806255L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

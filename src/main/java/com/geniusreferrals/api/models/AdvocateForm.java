@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class AdvocateForm 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4667606756966984833L;
+    private static final long serialVersionUID = 4715435054770199125L;
     private Advocate advocate;
     /** GETTER
      * The advocate's wrapper

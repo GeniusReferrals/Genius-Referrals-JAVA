@@ -7,28 +7,28 @@ package com.geniusreferrals.api.models;
 
 import java.util.*;
 
-public class BonusesForm1Builder {
+public class ForceBonusesFormBuilder {
     //the instance to build
-    private BonusesForm1 bonusesForm1;
+    private ForceBonusesForm forceBonusesForm;
 
     /**
      * Default constructor to initialize the instance
      */
-    public BonusesForm1Builder() {
-        bonusesForm1 = new BonusesForm1();
+    public ForceBonusesFormBuilder() {
+        forceBonusesForm = new ForceBonusesForm();
     }
 
     /**
      * The bonuses' wrapper
      */
-    public BonusesForm1Builder bonus(Bonuses1 bonus) {
-        bonusesForm1.setBonus(bonus);
+    public ForceBonusesFormBuilder bonus(ForceBonuses bonus) {
+        forceBonusesForm.setBonus(bonus);
         return this;
     }
     /**
      * Build the instance with the given values
      */
-    public BonusesForm1 build() {
-        return bonusesForm1;
+    public ForceBonusesForm build() {
+        return forceBonusesForm;
     }
 }

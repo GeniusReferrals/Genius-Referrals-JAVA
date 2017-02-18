@@ -9,15 +9,15 @@ import java.util.*;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class BonusesForm1 
+public class ForceBonusesForm 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5242827234830104306L;
-    private Bonuses1 bonus;
+    private static final long serialVersionUID = 5325698484726266094L;
+    private ForceBonuses bonus;
     /** GETTER
      * The bonuses' wrapper
      */
     @JsonGetter("bonus")
-    public Bonuses1 getBonus ( ) { 
+    public ForceBonuses getBonus ( ) { 
         return this.bonus;
     }
     
@@ -25,7 +25,7 @@ public class BonusesForm1
      * The bonuses' wrapper
      */
     @JsonSetter("bonus")
-    public void setBonus (Bonuses1 value) { 
+    public void setBonus (ForceBonuses value) { 
         this.bonus = value;
     }
  

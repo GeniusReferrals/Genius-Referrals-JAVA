@@ -71,7 +71,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5517368718420210965L;
+            private static final long serialVersionUID = 5270123228840096679L;
             {
                     put( "advocate_token", advocateToken );
             }});
@@ -80,7 +80,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5274453655854760525L;
+            private static final long serialVersionUID = 4766281235038367758L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -178,7 +178,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4776150166363279950L;
+            private static final long serialVersionUID = 5652283620832948915L;
             {
                     put( "advocate_token", advocateToken );
             }});
@@ -187,7 +187,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4940082416638975927L;
+            private static final long serialVersionUID = 4660016184304663093L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -301,11 +301,11 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5149498607525461484L;
+            private static final long serialVersionUID = 5115229149110050671L;
             {
                     put( "account_slug", accountSlug );
                     put( "campaign_slug", campaignSlug );
-                    put( "limit", limit );
+                    put( "limit", (null != limit) ? limit : 10 );
                     put( "from", from );
                     put( "to", to );
             }});
@@ -314,7 +314,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5007193996284252558L;
+            private static final long serialVersionUID = 5506128682471984141L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -428,7 +428,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4734817179868837380L;
+            private static final long serialVersionUID = 5241688054018936797L;
             {
                     put( "account_slug", accountSlug );
                     put( "campaign_slug", campaignSlug );
@@ -441,7 +441,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5428726823183053128L;
+            private static final long serialVersionUID = 5585327770107340018L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -555,7 +555,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5278104332625515931L;
+            private static final long serialVersionUID = 5333808908238816237L;
             {
                     put( "account_slug", accountSlug );
                     put( "campaign_slug", campaignSlug );
@@ -568,7 +568,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5325875670291085217L;
+            private static final long serialVersionUID = 5012043527008199378L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -682,7 +682,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5183431081580533047L;
+            private static final long serialVersionUID = 5213518905706270770L;
             {
                     put( "account_slug", accountSlug );
                     put( "campaign_slug", campaignSlug );
@@ -695,7 +695,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5075374242737240597L;
+            private static final long serialVersionUID = 5013800339813211761L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -809,7 +809,7 @@ public class ReportsController extends BaseController {
 
         //process query parameters
         APIHelper.appendUrlWithQueryParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5383403001271912172L;
+            private static final long serialVersionUID = 4924269259120735819L;
             {
                     put( "account_slug", accountSlug );
                     put( "campaign_slug", campaignSlug );
@@ -822,7 +822,7 @@ public class ReportsController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4921769709379513589L;
+            private static final long serialVersionUID = 4918951605158186195L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
