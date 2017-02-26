@@ -5,7 +5,8 @@
  */
 package com.geniusreferrals.api.models;
 
-import java.util.*;
+import java.io.InputStream;
+
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
 

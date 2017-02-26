@@ -5,7 +5,7 @@
  */
 package com.geniusreferrals.api.models;
 
-import java.util.*;
+import java.io.InputStream;
 
 public class PaymentMethodBuilder {
     //the instance to build
