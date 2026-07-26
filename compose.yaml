@@ -1,0 +1,12 @@
+services:
+  sdk:
+    build: .
+    volumes:
+      - ./:/sdk
+      - maven-cache:/root/.m2
+    environment:
+      - GR_API_TOKEN
+      - GR_ACCOUNT_SLUG
+    working_dir: /sdk
+volumes:
+  maven-cache:
