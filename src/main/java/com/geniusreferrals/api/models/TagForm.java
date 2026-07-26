@@ -1,0 +1,16 @@
+package com.geniusreferrals.api.models;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class TagForm {
+    public TagForm() {}
+
+    public TagForm(Tag tag) {
+        this.tag = tag;
+    }
+
+    @JsonProperty("tag")
+    public Tag tag;
+}
